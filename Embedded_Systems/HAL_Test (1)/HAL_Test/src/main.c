@@ -11,7 +11,7 @@ int main(void) {
     uint8_t led_state = 0;
     uint8_t last_button_state = 1;  // pull-up means idle state is HIGH
 
-    while (1) {
+    while (1) { 
         uint8_t button_state = HAL_GPIO_Read(BUTTON_PORT, BUTTON_PIN);
 
         // Simple debounce and edge detection
