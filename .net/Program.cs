@@ -9,7 +9,7 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Welcome to Simple Banking Application!");
+            Console.WriteLine("Welcome to  Simple Banking Application!");
 
             int num1;
             do
@@ -20,35 +20,32 @@
                 Console.WriteLine("3. Withdraw money");
                 Console.WriteLine("4. Display account details");
                 Console.WriteLine("5. Exit");
-                Console.Write("please enter: ");
+                Console.WriteLine("please enter: ");
 
                 num1 = Convert.ToInt32(Console.ReadLine());
-                    switch (num1)
-                    {
-                        case 1:
-                            CreateAccount();
-                            break;
-                        case 2:
-                            DepositMoney();
-                            break;
-                        case 3:
-                            WithdrawMoney();
-                            break;
-                        case 4:
-                            DisplayAccountDetails();
-                            break;
-                        case 5:
-                            Console.WriteLine("Thank you");
-                            break;
-                        default:
-                            Console.WriteLine("Invalid choice. Please try again.");
-                            break;
-                    }
-                
-                else
+                switch (num1)
                 {
-                    Console.WriteLine("Invalid input.");
+                    case 1:
+                        CreateAccount();
+                        break;
+                    case 2:
+                        DepositMoney();
+                        break;
+                    case 3:
+                        WithdrawMoney();
+                        break;
+                    case 4:
+                        DisplayAccountDetails();
+                        break;
+                    case 5:
+                        Console.WriteLine("Thank you");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
                 }
+
+
 
             } while (num1 != 5);
         }
@@ -79,42 +76,42 @@
             Console.Write("Enter amount to deposit: ");
             amount = Console.ReadLine();
 
-            
-                if (amount > 0.0)
-                {
-                    balance += amount;
-                    Console.WriteLine($"Successfully deposited ${amount}. New balance: ${balance}");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid amount. Please enter a positive value.");
-                }
+
+            if (amount > 0.0)
+            {
+                balance += amount;
+                Console.WriteLine($"Successfully deposited ${amount}. New balance: ${balance}");
             }
-            
+            else
+            {
+                Console.WriteLine("Invalid amount. Please enter a positive value.");
+            }
         }
+
+
 
         static void WithdrawMoney()
         {
             double amount;
             Console.Write("Enter amount to withdraw: ");
             amount = Console.ReadLine();
-            
-                if (amount > 0)
+
+            if (amount > 0)
+            {
+                if (amount <= balance)
                 {
-                    if (amount <= balance)
-                    {
-                        balance -= amount;
-                        Console.WriteLine($"Successfully withdrew ${amount}. New balance: ${balance}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Insufficient funds. Withdrawal amount exceeds available balance.");
-                    }
+                    balance -= amount;
+                    Console.WriteLine($"Successfully withdrew ${amount}. New balance: ${balance}");
                 }
-                
+                else
+                {
+                    Console.WriteLine("Insufficient funds. Withdrawal amount exceeds available balance.");
+                }
             }
-            
+
         }
+
+
 
         static void DisplayAccountDetails()
         {
@@ -129,6 +126,13 @@
             Console.WriteLine($"Account Holder: {accountHolderName}");
             Console.WriteLine($"Balance: ${balance}");
         }
+
+    }
+}
+
+
+
+
 
 
 
