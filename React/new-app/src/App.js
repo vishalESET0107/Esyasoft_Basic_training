@@ -1,6 +1,6 @@
 import { useState } from "react";
 import EventComponent from "./component/eventcomponent";
-
+import UseEffectcomponent from "./component/UseEffect";
 
 function App() {
 /*
@@ -21,6 +21,7 @@ function App() {
       <button onClick={decre}> decremnet</button>
     */}
     <EventComponent />
+    <UseEffectcomponent/>
 
 
     </div>
