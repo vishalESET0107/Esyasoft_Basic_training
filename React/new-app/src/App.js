@@ -1,6 +1,7 @@
 import { useState } from "react";
 import EventComponent from "./component/eventcomponent";
 import UseEffectcomponent from "./component/UseEffect";
+import UseRefComponent from "./component/UseRefCompenent";
 
 function App() {
 /*
@@ -22,6 +23,7 @@ function App() {
     */}
     <EventComponent />
     <UseEffectcomponent/>
+    <UseRefComponent />
 
 
     </div>
