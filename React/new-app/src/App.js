@@ -32,3 +32,46 @@ function App() {
 }
 
 export default App;
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import {useState,createContext} from 'react';
+import Usecontext from './Component/Usecontext';
+import GopalComponent from './Component/GopalComponent';
+
+
+const Context = React.createContext(null);
+export {Context};
+
+function App() {
+  
+  const [theme, setTheme] = useState("light");
+  const [count, setcount] = useState();
+  return (
+    <div className="App">
+      
+      <Context.Provider value={{ 
+      theme, 
+      setTheme, 
+      count, 
+      setcount 
+      }}>
+        <>Welcome to react app</>
+      <Usecontext/>
+      <GopalComponent/>
+      </Context.Provider>
+    </div>
+  );
+}
+
+export default App;
+
+import React from 'react'
+
+export default function Callanapi() {
+  return (
+    <div>
+      Hello
+    </div>
+  )
+}
